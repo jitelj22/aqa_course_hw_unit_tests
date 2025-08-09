@@ -7,6 +7,7 @@
 */
 function mergeArrays() {
   // Ваш код
+  return [].concat(...arguments);
 }
 /*
   2. Devide by _
@@ -15,8 +16,23 @@ function mergeArrays() {
     - Пример: I am super engineer => i_Am_Super_Engineer
   */
 function devideBy(sentence) {
-  // Ваш код
+ if(typeof sentence !== 'string'){
+    return 'Invalid data type';
+  } else {
+    sentence = sentence.trim().split(/\s+/);
+    for(let i = 0; i < sentence.length; i++){
+      let word = sentence[i];
+      if(i === 0){
+        sentence[i] = word.charAt(0).toLowerCase() + word.slice(1).toLowerCase();
+      } else {
+        sentence[i] = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      }
+    }
+    return sentence.join('_');
+  }
 }
+
+
 /*
   3. Фибаначчи
     - Напишите функцию fibonacci(n), возвращающую энное число Фибоначчи
@@ -26,7 +42,15 @@ function devideBy(sentence) {
     - Например fibonacci(8) //21
   */
 function fibonacci(n) {
-  // Ваш код
+ let start_num = 0;
+  let next_num = 1;
+
+  for (let i = 1; i <= n; i++) {
+    const num = start_num + next_num;
+    start_num = next_num;
+    next_num = num;
+  }
+  return start_num;
 }
 
 export { mergeArrays, fibonacci, devideBy };
