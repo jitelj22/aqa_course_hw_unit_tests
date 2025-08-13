@@ -8,18 +8,8 @@
 
 */
 
-function digitalRoot(num) {
-  if (typeof num !== 'number' || num < 0) return 'Invalid input';
-  if (num <= 9) return num;
-
-  const sum = num
-    .toString()
-    .split('')
-    .map(Number)
-    .reduce((el, digit) => el + Number(digit), 0);
-
-  // Рекурсивный вызов
-  return digitalRoot(sum);
+function digitalRoot(number) {
+  // Ваш код
 }
 
 export { digitalRoot };
