@@ -16,4 +16,34 @@
 let resultUnique;
 let resultNull;
 
+const competitorPizzas = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai']
+const myPizzasT1 = ['Peperoni', 'Margherita', 'Diablo', 'Vegetarian'];
+const myPizzasT2 = ['Peperoni', 'Caprichosa', 'Diablo', '4 cheeses', 'hawai'];
+
+for (const pizza of myPizzasT1) {
+  if (!competitorPizzas.map(p => p.toLowerCase()).includes(pizza.toLowerCase())) {
+    if (!resultUnique) {
+      resultUnique = [];
+    }
+    resultUnique.push(pizza);
+  } else if (!resultNull) {
+    resultNull = null; 
+  }
+}
+ 
+for (const pizza of myPizzasT2) {
+  if (!competitorPizzas.map(p => p.toLowerCase()).includes(pizza  .toLowerCase())) {
+    if (!resultUnique) {
+      resultUnique = [];
+    }
+    resultUnique.push(pizza);
+  } else if (!resultNull) {
+    resultNull = null;
+  }
+}
+
+if (!resultUnique) {    
+  resultNull = null;
+}    
+
 export { resultNull, resultUnique };

@@ -7,12 +7,12 @@
 */
 const mergeArrays = (...arrays) => [].concat(...arrays);
 
-/*
   2. Devide by _
     - Написать функцию, которая преобразует любое предложение в вот_Такой_Вот_Вид и возвращает его. 
     - Первое слово должно начинаться с буквы в нижнем регистре, у остальных -  верхнем. 
     - Пример: I am super engineer => i_Am_Super_Engineer
   */
+
 function devideBy (sentence){
   
   if (typeof sentence !== 'string') 
@@ -34,6 +34,7 @@ console.log(devideBy('I am super engineer')); // i_Am_Super_Engineer
       является суммой двух предыдущих
     - Например fibonacci(8) //21
   */
+
 const fibonacci = (n) => {
   if (n <= 0) return 0;
   if (n === 1) return 1;

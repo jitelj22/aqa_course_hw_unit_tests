@@ -8,6 +8,7 @@
 
 */
 
+
 function digitalRoot(num) {
   if (typeof num !== 'number' || num < 0) return 'Invalid input';
   if (num <= 9) return num;
@@ -17,9 +18,6 @@ function digitalRoot(num) {
     .split('')
     .map(Number)
     .reduce((el, digit) => el + Number(digit), 0);
-
-  // Рекурсивный вызов
-  return digitalRoot(sum);
 }
 
 export { digitalRoot };

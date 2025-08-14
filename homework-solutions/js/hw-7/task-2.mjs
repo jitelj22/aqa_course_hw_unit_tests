@@ -3,6 +3,7 @@
  Написать функцию, которая принимает на вход слово и проверяет, является ли это слово палиндромом
 */
 
+
 const isPalindrom = (word) => {
   if (typeof word !== 'string') {
     return false;
@@ -20,6 +21,7 @@ const isPalindrom = (word) => {
  и возвращает слово с наибольшим количеством букв. 
  Если таких слов несколько - возвращает их все.
 */
+
 
 const findLongestWords = (sentence) => {
   if (typeof sentence !== 'string') {
