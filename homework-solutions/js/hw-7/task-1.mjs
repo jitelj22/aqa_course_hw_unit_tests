@@ -5,34 +5,27 @@
   - Например: mergeArrays([1,2], [3,4], [5,6]) // [1,2,3,4,5,6]
   - Решить с использованием Spread operator
 */
-function mergeArrays() {
-  // Ваш код
-  return [].concat(...arguments);
-}
-/*
+const mergeArrays = (...arrays) => [].concat(...arrays);
+
   2. Devide by _
     - Написать функцию, которая преобразует любое предложение в вот_Такой_Вот_Вид и возвращает его. 
     - Первое слово должно начинаться с буквы в нижнем регистре, у остальных -  верхнем. 
     - Пример: I am super engineer => i_Am_Super_Engineer
   */
-function devideBy(sentence) {
- if(typeof sentence !== 'string'){
+
+function devideBy (sentence){
+  
+  if (typeof sentence !== 'string') 
     return 'Invalid data type';
-  } else {
-    sentence = sentence.trim().split(/\s+/);
-    for(let i = 0; i < sentence.length; i++){
-      let word = sentence[i];
-      if(i === 0){
-        sentence[i] = word.charAt(0).toLowerCase() + word.slice(1).toLowerCase();
-      } else {
-        sentence[i] = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-      }
-    }
-    return sentence.join('_');
-  }
+
+  return sentence
+    .toLowerCase()
+    .split(/\s+/)
+    .map((word, index) => index === 0 
+    ? word : word.charAt(0).toUpperCase() + word.slice(1))
+    .join('_');
 }
-
-
+console.log(devideBy('I am super engineer')); // i_Am_Super_Engineer
 /*
   3. Фибаначчи
     - Напишите функцию fibonacci(n), возвращающую энное число Фибоначчи
@@ -41,16 +34,19 @@ function devideBy(sentence) {
       является суммой двух предыдущих
     - Например fibonacci(8) //21
   */
-function fibonacci(n) {
- let start_num = 0;
-  let next_num = 1;
 
-  for (let i = 1; i <= n; i++) {
-    const num = start_num + next_num;
-    start_num = next_num;
-    next_num = num;
+const fibonacci = (n) => {
+  if (n <= 0) return 0;
+  if (n === 1) return 1;
+ 
+  let a = 0, b = 1, c;
+  for (let i = 2; i <= n; i++) {
+    c = a + b;
+    a = b;
+    b = c;
   }
-  return start_num;
+  return b;
 }
+
 
 export { mergeArrays, fibonacci, devideBy };

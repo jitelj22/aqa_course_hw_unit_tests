@@ -8,14 +8,17 @@
 
 */
 
-function digitalRoot(number) {
-  if (number < 10) {
-    return number;
-  }
-  const sum = String(number)
+
+function digitalRoot(num) {
+  if (typeof num !== 'number' || num < 0) return 'Invalid input';
+  if (num <= 9) return num;
+
+  const sum = num
+    .toString()
     .split('')
-    .reduce((num, num_2) => num + Number(num_2), 0);
-  return digitalRoot(sum);
+    .map(Number)
+    .reduce((el, digit) => el + Number(digit), 0);
 }
 
 export { digitalRoot };
+
