@@ -17,32 +17,23 @@ const numbers = [7, 8, 2, 30, 85, 95, 77, 94, 37, 31];
 
 //1
 let forEach = [];
-numbers.forEach((num) => {
-  if (num % 3 === 0) {
-    forEach.push(num);
-  }
-});
+numbers.forEach(num => num % 3 === 0 && forEach.push(num))
 console.log(forEach);
 
 //2
-let map = [];
+let map;
 function mapArray(arr) {
   return arr.map((num) => num - arr.length);
 }
-map = mapArray(numbers);   
+map = mapArray(numbers);
 console.log(map);
 
 //3
-let filter = [];
-const result = numbers.filter((num, index) => {
-  if (index === 0) return false;
+let filter = numbers.filter((num, index) => {
   return num > numbers[index - 1];
 });
-filter = result;
-console.log(filter);
-
 //4
-let find = [];
+let find;
 function findNumber(numbers) {
   return numbers.find((num, index) => num === index);
 }
@@ -50,15 +41,12 @@ find = findNumber(numbers);
 console.log(find);
 
 //5
-let sort = [];
-function sortNumbers(numbers) {
-   return [...numbers].sort((a, b) => a - b);
-   }
-sort = sortNumbers(numbers);
+let sort = [...numbers].sort((a, b) => a - b);
+  
 console.log(sort);
 
 //6
-let reduce = [];
+let reduce;
 function sumNumbers(numbers) {
   return numbers.reduce((acc, num) => acc + num, 0);
 } 
@@ -66,7 +54,7 @@ reduce = sumNumbers(numbers);
 console.log(reduce);
 
 //7
-let some = [];
+let some;
 function hasGreaterThan90(numbers) {
   return numbers.some((num) => num > 90);
 }
@@ -74,7 +62,7 @@ some = hasGreaterThan90(numbers);
 console.log(some);
 
 //8
-let every = [];
+let every;
 function areAllTwoDigit(numbers) {
   return numbers.every((num) => num >= 10 && num < 100);
 }  

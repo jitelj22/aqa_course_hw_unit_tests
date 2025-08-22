@@ -21,7 +21,7 @@ const words = [
 function sortedByVowels(wordsArr) {
   const vowels = 'aeiouAEIOU';
 
-  return wordsArr.sort((a, b) => {
+  return [...wordsArr].sort((a, b) => {
     const countVowels = (word) => [...word].filter(el => vowels.includes(el)).length;
     return countVowels(a) - countVowels(b);
   });
