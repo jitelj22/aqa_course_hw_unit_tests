@@ -7,30 +7,52 @@
  5. Напишите функцию для удаления персонажа removeCharacter(name) (Реализовать через splice, индекс персонажа искать методом findInxex)
  */
 
+
 const characters = [
   { name: 'Barney', age: 35 },
   { name: 'Fred', age: 39 },
   { name: 'Jack', age: 49 },
 ];
 
+
+
 function addCharacter(character) {
-  // Ваш код
+  if (!character || typeof character.name !== "string" || typeof character.age !== "number") {
+    throw new Error("Invalid inpuit")
+  }
+  characters.push(character);
+  return character;
 }
 
+
 function getCharacter(name) {
-  // Ваш код
+  return characters.find(character => character.name === name);
 }
 
 function getCharactersByAge(minAge) {
-  // Ваш код
+  if (typeof minAge !== "number") {
+    throw new Error("invalid input")
+  }
+  return characters.filter(obj => obj.age >= minAge);
 }
 
 function updateCharacter(name, newCharacter) {
-  // Ваш код
-}
+  const character = getCharacter(name);
+  if (!character) {
+    throw new Error('Not found character');
+  }
+    Object.assign(character, newCharacter);
+    return character;
+  }
 
 function removeCharacter(name) {
-  // Ваш код
+  
+  const index = characters.findIndex(character => character.name === name);
+  if (index === -1) {
+    throw new Error("Not found character")
+  }
+  characters.splice(index, 1);
+  return characters;
 }
 
 export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };
