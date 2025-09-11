@@ -39,12 +39,12 @@
 */
 
 //1
-let num1: number = 42;
-let str: string = "Hello, TypeScript!";
-let isComplete: boolean = true;
-let numbers: number[] = [1, 2, 3, 4, 5];
-let cities: string[] = ["Minsk", "Warsaw", "London"];
-let person: { name: string; age: number; city: string } = { name: "Alice", age: 30, city: "Minsk" };
+const num1: number = 42;
+const str: string = "Hello, TypeScript!";
+const isComplete: boolean = true;
+const numbers: number[] = [1, 2, 3, 4, 5];
+const cities: string[] = ["Minsk", "Warsaw", "London"];
+const person: { name: string; age: number; city: string } = { name: "Alice", age: 30, city: "Minsk" };
 
 //2
 type User = {
@@ -55,19 +55,19 @@ type User = {
 type Grade = 'junior' | 'middle' | 'senior';
 
 //3 
-interface Car {
+Interface Car {
     brand: string;
     model: string;
     year?: number;
 }
 
 //4
-interface Address {
+Interface Address {
     street: string;
     city: string;
     zipCode: number;
 }
-interface FullAddress extends Address {
+Interface FullAddress extends Address {
     country: string;
 }
 
