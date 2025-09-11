@@ -55,19 +55,19 @@ type User = {
 type Grade = 'junior' | 'middle' | 'senior';
 
 //3 
-Interface Car {
+interface ICar {
     brand: string;
     model: string;
     year?: number;
 }
 
 //4
-Interface Address {
+interface IAddress {
     street: string;
     city: string;
     zipCode: number;
 }
-Interface FullAddress extends Address {
+interface IFullAddress extends IAddress {
     country: string;
 }
 
